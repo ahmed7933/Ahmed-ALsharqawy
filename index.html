@@ -1,358 +1,1190 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Ahmed Alsharqawy | AI Video Ads Creator & Performance Marketer</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    <script id="tailwind-config">
-          tailwind.config = {
-            darkMode: "class",
-            theme: {
-              extend: {
-                colors: {
-                  "surface-tint": "#81ecff",
-                  "secondary-fixed": "#2ff801",
-                  "on-secondary-fixed-variant": "#0d6200",
-                  "on-error-container": "#ffa8a3",
-                  "surface-container-highest": "#262626",
-                  "on-tertiary-fixed-variant": "#003971",
-                  "primary-container": "#00e3fd",
-                  "surface-container-low": "#131313",
-                  "tertiary-container": "#599cf9",
-                  "error-container": "#9f0519",
-                  "secondary-container": "#106e00",
-                  "on-primary-fixed-variant": "#005762",
-                  "on-surface": "#ffffff",
-                  "on-error": "#490006",
-                  "surface-dim": "#0e0e0e",
-                  "on-tertiary-container": "#001d3f",
-                  "primary-fixed": "#00e3fd",
-                  "surface-container-lowest": "#000000",
-                  "surface-container-high": "#20201f",
-                  "surface": "#0e0e0e",
-                  "background": "#0e0e0e",
-                  "secondary-dim": "#2be800",
-                  "inverse-surface": "#fcf9f8",
-                  "surface-bright": "#2c2c2c",
-                  "outline": "#767575",
-                  "inverse-primary": "#006976",
-                  "surface-variant": "#262626",
-                  "on-primary": "#005762",
-                  "on-background": "#ffffff",
-                  "on-tertiary": "#002a55",
-                  "on-primary-fixed": "#003840",
-                  "inverse-on-surface": "#565555",
-                  "on-surface-variant": "#adaaaa",
-                  "surface-container": "#1a1a1a",
-                  "secondary-fixed-dim": "#2be800",
-                  "tertiary": "#70aaff",
-                  "on-tertiary-fixed": "#001835",
-                  "primary-fixed-dim": "#00d4ec",
-                  "on-secondary-container": "#e7ffd9",
-                  "secondary": "#2ff801",
-                  "primary-dim": "#00d4ec",
-                  "tertiary-fixed-dim": "#65a4ff",
-                  "on-secondary": "#0b5800",
-                  "error": "#ff716c",
-                  "tertiary-fixed": "#80b2ff",
-                  "on-primary-container": "#004d57",
-                  "on-secondary-fixed": "#064200",
-                  "primary": "#81ecff",
-                  "tertiary-dim": "#5c9ffc",
-                  "outline-variant": "#484847",
-                  "error-dim": "#d7383b"
-                },
-                fontFamily: {
-                  "headline": ["Space Grotesk"],
-                  "body": ["Inter"],
-                  "label": ["Inter"]
-                },
-                borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
-              },
-            },
-          }
-        </script>
-    <style>
-          .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-          }
-          .glass-effect {
-            background: rgba(38, 38, 38, 0.6);
-            backdrop-filter: blur(20px);
-          }
-          .neural-pulse {
-            height: 2px;
-            background: linear-gradient(90deg, #81ecff, #2ff801);
-            width: 100%;
-            position: relative;
-            overflow: hidden;
-          }
-          body {
-            background-color: #0e0e0e;
-            color: #ffffff;
-          }
-          .no-scrollbar::-webkit-scrollbar {
-            display: none;
-          }
-          .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-          }
-          iframe {
-            aspect-ratio: 9/16;
-            width: 100%;
-            height: 100%;
-            border: none;
-          }
-        </style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ahmed Alsharqawy | AI Video Ads That Print ROAS</title>
+  <meta name="description" content="Ahmed Alsharqawy — AI Video Ads Creator & Performance Marketer. Drop your CPA. Scale your ROAS. 51% hook rate proven."/>
+
+  <!-- Fonts: Syne (headlines) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* ============================= */
+    /*        CSS VARIABLES          */
+    /* ============================= */
+    :root {
+      --bg:           #080808;
+      --surface:      #111111;
+      --card:         #161616;
+      --card-h:       #1c1c1c;
+      --border:       rgba(255,255,255,0.06);
+      --border-a:     rgba(232,255,71,0.2);
+
+      --accent:       #E8FF47;
+      --accent-dim:   #c8df30;
+      --accent-muted: rgba(232,255,71,0.08);
+
+      --red:          #FF4747;
+      --red-muted:    rgba(255,71,71,0.1);
+
+      --text:         #FFFFFF;
+      --text-s:       #888888;
+      --text-t:       #444444;
+
+      --font-h:       'Syne', sans-serif;
+      --font-b:       'DM Sans', sans-serif;
+
+      --r:  8px;
+      --rl: 16px;
+    }
+
+    /* ============================= */
+    /*          RESET & BASE         */
+    /* ============================= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-b);
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Grain texture */
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 9999; opacity: 0.5;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button { cursor: pointer; }
+
+    /* ============================= */
+    /*           LAYOUT              */
+    /* ============================= */
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
+    .sec  { padding: 120px 0; }
+
+    /* ============================= */
+    /*         TYPOGRAPHY            */
+    /* ============================= */
+    h1, h2, h3 { font-family: var(--font-h); font-weight: 800; line-height: 1.08; letter-spacing: -0.04em; }
+
+    /* ============================= */
+    /*            BADGE              */
+    /* ============================= */
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 14px; border-radius: 100px;
+      border: 1px solid var(--border-a); background: var(--accent-muted);
+      font-family: var(--font-h); font-size: 10px; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent);
+    }
+    .badge .dot {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
+
+    /* ============================= */
+    /*           BUTTONS             */
+    /* ============================= */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--font-h); font-weight: 700; font-size: 15px;
+      border-radius: var(--r); transition: all .2s; border: none;
+      padding: 16px 32px; letter-spacing: -.01em;
+    }
+    .btn-p { background: var(--accent); color: #000; }
+    .btn-p:hover { background: var(--accent-dim); transform: translateY(-1px); box-shadow: 0 8px 32px rgba(232,255,71,.25); }
+    .btn-s { border: 1px solid var(--border); color: var(--text); background: transparent; }
+    .btn-s:hover { border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.04); }
+    .btn:active { transform: none !important; }
+
+    /* ============================= */
+    /*             NAV               */
+    /* ============================= */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(8,8,8,.85);
+      backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+    }
+    .nav-logo {
+      font-family: var(--font-h); font-weight: 800; font-size: 18px;
+      letter-spacing: -.04em;
+    }
+    .nav-logo em { color: var(--accent); font-style: normal; }
+    .nav-links { display: flex; gap: 36px; }
+    .nav-links a {
+      font-family: var(--font-h); font-size: 13px; font-weight: 600;
+      color: var(--text-s); letter-spacing: -.01em; transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--accent); color: #000;
+      padding: 10px 22px; border-radius: var(--r);
+      font-family: var(--font-h); font-weight: 700; font-size: 13px;
+      transition: all .2s;
+    }
+    .nav-cta:hover { background: var(--accent-dim); }
+
+    /* Hamburger */
+    .ham {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; padding: 4px;
+    }
+    .ham span {
+      display: block; width: 24px; height: 2px;
+      background: var(--text); border-radius: 2px; transition: all .3s;
+    }
+    .ham.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .ham.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .ham.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile menu overlay */
+    .mob-menu {
+      display: none; position: fixed; inset: 0; top: 68px;
+      background: rgba(8,8,8,.97); backdrop-filter: blur(24px);
+      z-index: 199; flex-direction: column; align-items: center;
+      justify-content: center; gap: 44px;
+    }
+    .mob-menu.open { display: flex; }
+    .mob-menu a {
+      font-family: var(--font-h); font-size: 36px; font-weight: 800;
+      color: var(--text-s); letter-spacing: -.05em; transition: color .2s;
+    }
+    .mob-menu a:hover { color: var(--text); }
+    .mob-menu .btn { font-size: 18px; padding: 18px 44px; }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .ham { display: flex; }
+    }
+
+    /* ============================= */
+    /*            HERO               */
+    /* ============================= */
+    .hero {
+      min-height: 100svh;
+      display: grid; grid-template-columns: 1.1fr 1fr;
+      align-items: center; gap: 80px;
+      padding: 120px 0 80px;
+    }
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; gap: 56px; padding: 100px 0 60px; }
+      .hero-panel { display: none; }
+    }
+
+    .hero-label { margin-bottom: 32px; }
+    .hero-h1 {
+      font-size: clamp(48px, 5.5vw, 80px);
+      margin-bottom: 24px;
+    }
+    .hero-h1 .hi { color: var(--accent); }
+    .hero-sub {
+      color: var(--text-s); font-size: 17px; line-height: 1.75;
+      max-width: 500px; margin-bottom: 40px;
+    }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 56px; }
+    .hero-metrics {
+      display: flex; gap: 44px; padding-top: 40px;
+      border-top: 1px solid var(--border); flex-wrap: wrap;
+    }
+    .hm-val {
+      font-family: var(--font-h); font-size: 26px; font-weight: 800;
+      letter-spacing: -.04em; color: var(--accent);
+    }
+    .hm-lbl { font-size: 11px; color: var(--text-s); margin-top: 3px;
+      text-transform: uppercase; letter-spacing: .07em; }
+
+    /* Visual panel */
+    .hero-panel {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--rl); padding: 28px; position: relative;
+      overflow: hidden;
+    }
+    .hero-panel::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    }
+    .panel-lbl {
+      font-family: var(--font-h); font-size: 10px; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase; color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .live-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 11px; color: var(--text-s); letter-spacing: .05em; text-transform: uppercase;
+    }
+    .ldot {
+      width: 6px; height: 6px; border-radius: 50%; background: #4CAF50;
+      animation: lp 2s infinite;
+    }
+    @keyframes lp { 0%,100%{box-shadow:0 0 0 0 rgba(76,175,80,.5)} 50%{box-shadow:0 0 0 6px rgba(76,175,80,0)} }
+
+    .chart {
+      height: 120px; display: flex; align-items: flex-end; gap: 7px;
+      margin: 20px 0;
+    }
+    .bar {
+      flex: 1; border-radius: 4px 4px 0 0;
+      background: rgba(232,255,71,.15); position: relative;
+      animation: bg .9s ease-out forwards; transform-origin: bottom;
+    }
+    .bar::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(232,255,71,.35), transparent);
+      border-radius: inherit;
+    }
+    .bar.hi { background: rgba(232,255,71,.45); }
+    .bar.hi::after { background: linear-gradient(to top, var(--accent), rgba(232,255,71,.2)); }
+    @keyframes bg { from{transform:scaleY(0)} to{transform:scaleY(1)} }
+    .bar:nth-child(1){height:28%;animation-delay:.00s}
+    .bar:nth-child(2){height:42%;animation-delay:.05s}
+    .bar:nth-child(3){height:36%;animation-delay:.10s}
+    .bar:nth-child(4){height:62%;animation-delay:.15s}
+    .bar:nth-child(5){height:54%;animation-delay:.20s}
+    .bar:nth-child(6){height:80%;animation-delay:.25s}
+    .bar:nth-child(7){height:100%;animation-delay:.30s}
+
+    .chart-bottom {
+      display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;
+    }
+    .chart-val { font-family: var(--font-h); font-size: 34px; font-weight: 800; letter-spacing: -.04em; color: var(--accent); }
+    .chart-sub { font-size: 12px; color: var(--text-s); }
+    .chart-delta { font-size: 12px; font-weight: 700; color: var(--accent); }
+
+    .panel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .pstat {
+      background: rgba(255,255,255,.025); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 14px 16px;
+    }
+    .pstat-v { font-family: var(--font-h); font-size: 18px; font-weight: 700; letter-spacing: -.03em; }
+    .pstat-v.a { color: var(--accent); }
+    .pstat-l { font-size: 11px; color: var(--text-s); margin-top: 2px; }
+
+    /* ============================= */
+    /*         PROOF TICKER          */
+    /* ============================= */
+    .ticker { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); overflow: hidden; padding: 18px 0; }
+    .ticker-inner {
+      display: flex; gap: 60px; white-space: nowrap;
+      animation: tick 28s linear infinite;
+    }
+    .ticker-inner:hover { animation-play-state: paused; }
+    @keyframes tick { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+    .tick-item {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-size: 13px; color: var(--text-s); font-weight: 500; flex-shrink: 0;
+    }
+    .tick-icon { color: var(--accent); }
+
+    /* ============================= */
+    /*        SECTION HEADER         */
+    /* ============================= */
+    .sh { margin-bottom: 72px; }
+    .sh-badge { margin-bottom: 16px; }
+    .sh-title { font-size: clamp(34px, 4vw, 56px); margin-bottom: 18px; }
+    .sh-sub { color: var(--text-s); font-size: 17px; max-width: 520px; line-height: 1.65; }
+    .sh-line { width: 48px; height: 2px; background: var(--accent); margin-top: 24px; }
+
+    /* ============================= */
+    /*         SYSTEM CARDS          */
+    /* ============================= */
+    .sys-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+    @media (max-width: 768px) { .sys-grid { grid-template-columns: 1fr; } }
+
+    .sys-card {
+      background: var(--card); border: 1px solid var(--border);
+      padding: 40px 36px; position: relative; overflow: hidden;
+      transition: background .3s;
+    }
+    .sys-card:hover { background: var(--card-h); }
+    .sys-card::after {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: var(--accent); transform: scaleX(0); transform-origin: left;
+      transition: transform .4s;
+    }
+    .sys-card:hover::after { transform: scaleX(1); }
+    .sys-num {
+      font-family: var(--font-h); font-size: 72px; font-weight: 800;
+      color: rgba(255,255,255,.03); letter-spacing: -.06em; line-height: 1;
+      position: absolute; top: 12px; right: 16px;
+    }
+    .sys-icon {
+      width: 48px; height: 48px; border-radius: var(--r);
+      background: var(--accent-muted); border: 1px solid var(--border-a);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; margin-bottom: 24px;
+    }
+    .sys-title { font-family: var(--font-h); font-size: 22px; font-weight: 700; margin-bottom: 12px; letter-spacing: -.025em; }
+    .sys-desc { color: var(--text-s); font-size: 15px; line-height: 1.7; }
+
+    /* ============================= */
+    /*          CASE STUDY           */
+    /* ============================= */
+    .cs-head {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 40px; margin-bottom: 56px; flex-wrap: wrap;
+    }
+    .verified {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(76,175,80,.1); border: 1px solid rgba(76,175,80,.25);
+      color: #4CAF50; padding: 10px 18px; border-radius: 100px;
+      font-size: 12px; font-weight: 700; font-family: var(--font-h);
+      letter-spacing: .06em; text-transform: uppercase;
+    }
+
+    .cs-metrics { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; margin-bottom: 2px; }
+    @media (max-width: 768px) { .cs-metrics { grid-template-columns: repeat(2,1fr); } }
+
+    .csm {
+      background: var(--card); border: 1px solid var(--border);
+      padding: 32px 28px;
+    }
+    .csm-val {
+      font-family: var(--font-h); font-size: 38px; font-weight: 800;
+      letter-spacing: -.04em; margin-bottom: 6px; line-height: 1;
+    }
+    .csm-val.a { color: var(--accent); }
+    .csm-lbl { font-size: 11px; color: var(--text-s); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 18px; }
+    .csm-bar { height: 2px; background: var(--border); border-radius: 2px; overflow: hidden; }
+    .csm-fill { height: 100%; background: var(--accent); border-radius: 2px; transition: width 1s ease; }
+
+    /* Screenshot */
+    .screenshot {
+      position: relative; border-radius: var(--rl); overflow: hidden;
+      border: 1px solid var(--border); margin-bottom: 2px;
+      cursor: zoom-in;
+    }
+    .screenshot img {
+      width: 100%; display: block; opacity: .88;
+      transition: opacity .4s, transform .6s;
+    }
+    .screenshot:hover img { opacity: 1; transform: scale(1.01); }
+    .screenshot-over {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(8,8,8,.55) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .screenshot-tag {
+      position: absolute; bottom: 20px; left: 20px;
+    }
+
+    /* Videos strip */
+    .vids { display: flex; gap: 14px; overflow-x: auto; padding-bottom: 12px; scrollbar-width: none; }
+    .vids::-webkit-scrollbar { display: none; }
+    .vid-card {
+      flex-shrink: 0; width: 210px; aspect-ratio: 9/16;
+      border-radius: var(--rl); overflow: hidden;
+      border: 1px solid var(--border); background: var(--card); position: relative;
+    }
+    .vid-card iframe { width: 100%; height: 100%; border: none; }
+    .vid-label {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.92), transparent);
+      padding: 44px 14px 14px; opacity: 0; transition: opacity .3s;
+    }
+    .vid-card:hover .vid-label { opacity: 1; }
+    .vid-title { font-family: var(--font-h); font-size: 12px; font-weight: 700; }
+    .vid-meta { font-size: 10px; color: rgba(255,255,255,.5); margin-top: 3px; }
+
+    /* ============================= */
+    /*        TESTIMONIALS           */
+    /* ============================= */
+    .test-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+    @media (max-width: 1024px) { .test-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px)  { .test-grid { grid-template-columns: 1fr; } }
+
+    .tcard {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--rl); padding: 28px;
+      transition: border-color .3s;
+    }
+    .tcard:hover { border-color: rgba(232,255,71,.15); }
+    .stars { color: var(--accent); font-size: 13px; margin-bottom: 10px; letter-spacing: 2px; }
+    .tresult {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--accent-muted); border: 1px solid var(--border-a);
+      color: var(--accent); padding: 4px 10px; border-radius: 100px;
+      font-size: 11px; font-weight: 700; font-family: var(--font-h);
+      margin-bottom: 16px;
+    }
+    .tquote { font-size: 14px; color: var(--text-s); line-height: 1.75; margin-bottom: 24px; }
+    .tquote strong { color: var(--text); font-weight: 600; }
+    .tauthor { display: flex; align-items: center; gap: 12px; }
+    .tavatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--accent-muted); border: 1px solid var(--border-a);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-h); font-weight: 800; font-size: 15px; color: var(--accent);
+      flex-shrink: 0;
+    }
+    .tname { font-family: var(--font-h); font-weight: 700; font-size: 14px; }
+    .trole { font-size: 12px; color: var(--text-s); margin-top: 2px; }
+
+    /* ============================= */
+    /*           SERVICES            */
+    /* ============================= */
+    .srv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+    @media (max-width: 768px) { .srv-grid { grid-template-columns: 1fr; } }
+
+    .scard {
+      background: var(--card); border: 1px solid var(--border);
+      padding: 48px 44px; position: relative; overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+    .scard.feat {
+      border-color: var(--border-a);
+      background: linear-gradient(135deg, rgba(232,255,71,.04) 0%, var(--card) 60%);
+    }
+    .stag {
+      position: absolute; top: 24px; right: 24px;
+      background: var(--accent); color: #000;
+      font-size: 10px; font-weight: 700; padding: 4px 10px;
+      border-radius: 100px; font-family: var(--font-h);
+      letter-spacing: .07em; text-transform: uppercase;
+    }
+    .stitle { font-family: var(--font-h); font-size: 28px; font-weight: 800; letter-spacing: -.035em; margin-bottom: 12px; }
+    .sdesc { color: var(--text-s); font-size: 15px; margin-bottom: 32px; line-height: 1.65; }
+    .slist { list-style: none; margin-bottom: 36px; flex-grow: 1; }
+    .slist li {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 13px 0; border-bottom: 1px solid var(--border);
+      font-size: 14px; color: var(--text-s);
+    }
+    .slist li:last-child { border-bottom: none; }
+    .chk { color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: 2px; font-size: 13px; }
+    .sprice {
+      font-family: var(--font-h); font-size: 13px; color: var(--text-s);
+      padding: 14px 0; border-top: 1px solid var(--border); margin-bottom: 20px;
+    }
+    .sprice span { color: var(--text); font-weight: 700; }
+
+    /* ============================= */
+    /*           PROCESS             */
+    /* ============================= */
+    .proc { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; }
+    @media (max-width: 1024px) { .proc { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 640px)  { .proc { grid-template-columns: 1fr; } }
+
+    .pstep {
+      background: var(--card); border: 1px solid var(--border);
+      padding: 32px 28px; transition: border-color .3s;
+    }
+    .pstep:hover { border-color: var(--border-a); }
+    .pnum {
+      font-family: var(--font-h); font-size: 52px; font-weight: 800;
+      color: rgba(255,255,255,.06); letter-spacing: -.06em; line-height: 1;
+      margin-bottom: 20px; transition: color .3s;
+    }
+    .pstep:hover .pnum { color: rgba(232,255,71,.15); }
+    .ptitle { font-family: var(--font-h); font-size: 18px; font-weight: 700; margin-bottom: 10px; letter-spacing: -.025em; }
+    .pdesc { color: var(--text-s); font-size: 14px; line-height: 1.65; }
+    .ptime { font-size: 11px; color: var(--accent); font-weight: 700; margin-top: 18px; letter-spacing: .07em; text-transform: uppercase; }
+
+    /* ============================= */
+    /*             FAQ               */
+    /* ============================= */
+    .faq-wrap { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: start; }
+    @media (max-width: 900px) { .faq-wrap { grid-template-columns: 1fr; gap: 48px; } }
+
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-btn {
+      width: 100%; background: none; border: none; color: var(--text);
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+      padding: 22px 0; font-family: var(--font-h); font-size: 15px; font-weight: 700;
+      letter-spacing: -.02em; text-align: left; transition: color .2s;
+    }
+    .faq-btn:hover { color: var(--accent); }
+    .faq-ico {
+      width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border);
+      flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+      font-size: 17px; color: var(--text-s); transition: all .3s;
+    }
+    .faq-item.open .faq-ico { background: var(--accent-muted); border-color: var(--border-a); color: var(--accent); transform: rotate(45deg); }
+    .faq-body { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
+    .faq-item.open .faq-body { max-height: 300px; }
+    .faq-inner { color: var(--text-s); font-size: 14px; line-height: 1.8; padding-bottom: 22px; }
+
+    /* ============================= */
+    /*           FINAL CTA           */
+    /* ============================= */
+    .fcta {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--rl); padding: 80px 60px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    @media (max-width: 640px) { .fcta { padding: 56px 28px; } }
+    .fcta::before {
+      content: ''; position: absolute;
+      top: -120px; left: 50%; transform: translateX(-50%);
+      width: 500px; height: 500px;
+      background: radial-gradient(ellipse, rgba(232,255,71,.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .scarcity {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--red-muted); border: 1px solid rgba(255,71,71,.2);
+      color: var(--red); padding: 8px 20px; border-radius: 100px;
+      font-size: 13px; font-weight: 700; font-family: var(--font-h);
+      margin-bottom: 36px; letter-spacing: -.01em;
+    }
+    .scarcity .sdot { width: 6px; height: 6px; border-radius: 50%; background: var(--red); animation: pulse 1.5s infinite; }
+    .ftitle { font-size: clamp(36px, 4.5vw, 64px); margin-bottom: 20px; }
+    .fsub { color: var(--text-s); font-size: 18px; max-width: 480px; margin: 0 auto 44px; }
+    .fguarantee { display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap; color: var(--text-s); font-size: 13px; margin-top: 28px; }
+    .fguarantee span { color: var(--accent); font-weight: 700; }
+
+    /* ============================= */
+    /*            FOOTER             */
+    /* ============================= */
+    footer { border-top: 1px solid var(--border); padding: 56px 0 40px; }
+    .foot-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: 40px; }
+    .foot-logo { font-family: var(--font-h); font-weight: 800; font-size: 16px; letter-spacing: -.03em; }
+    .foot-logo em { color: var(--accent); font-style: normal; }
+    .foot-links { display: flex; gap: 28px; flex-wrap: wrap; }
+    .foot-links a { font-size: 14px; color: var(--text-s); transition: color .2s; }
+    .foot-links a:hover { color: var(--text); }
+    .foot-copy { text-align: center; font-size: 12px; color: var(--text-t); }
+
+    /* ============================= */
+    /*         ALT SECTION BG        */
+    /* ============================= */
+    .alt { background: rgba(255,255,255,.015); }
+
+    /* ============================= */
+    /*         SCROLL REVEAL         */
+    /* ============================= */
+    .rv { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+    .rv.in { opacity: 1; transform: none; }
+    .rv.in:nth-child(2) { transition-delay: .1s; }
+    .rv.in:nth-child(3) { transition-delay: .2s; }
+
+  </style>
 </head>
-<body class="font-body selection:bg-primary/30 selection:text-primary">
-    <nav class="fixed top-0 w-full z-50 bg-black/60 backdrop-blur-xl shadow-[0_0_20px_rgba(129,236,255,0.06)]">
-        <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-            <div class="text-2xl font-black text-[#81ecff] tracking-tighter font-headline">
-                Ahmed Alsharqawy
-            </div>
-            <div class="hidden md:flex gap-8 items-center">
-                <a class="text-[#81ecff] border-b-2 border-[#81ecff] pb-1 font-headline font-bold tracking-tight" href="#system">System</a>
-                <a class="text-[#adaaaa] hover:text-[#81ecff] transition-colors font-headline font-bold tracking-tight" href="#case-study">Case Study</a>
-                <a class="text-[#adaaaa] hover:text-[#81ecff] transition-colors font-headline font-bold tracking-tight" href="#services">Services</a>
-            </div>
-            <a href="https://wa.me/201017854522" class="bg-primary text-on-primary px-6 py-2 font-headline font-bold rounded-sm hover:bg-primary-dim hover:shadow-[0_0_15px_rgba(129,236,255,0.3)] transition-all active:scale-95 duration-200" target="_blank">
-                Book a Call
-            </a>
-        </div>
-    </nav>
-    <main class="pt-24">
-        <section class="min-h-[921px] flex flex-col md:flex-row items-center justify-center px-8 max-w-7xl mx-auto gap-12 py-16">
-            <div class="flex-1 space-y-8">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-bold tracking-widest uppercase">
-                    <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
-                    </span>
-                    Performance First AI Ads
-                </div>
-                <h1 class="font-headline text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight text-on-surface">
-                    I Don't Just Make AI Videos. I Build Performance Ads That <span class="text-secondary">Print Money.</span>
-                </h1>
-                <p class="text-on-surface-variant text-lg md:text-xl max-w-xl leading-relaxed">
-                    Ahmed Alsharqawy | AI Video Ads Creator & Performance Marketer. I use advanced AI workflows and psychological triggers to drop your CPA and skyrocket your ROAS.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                    <a href="#case-study" class="bg-primary text-on-primary px-8 py-4 font-headline font-bold text-lg rounded-sm hover:bg-primary-dim hover:shadow-[0_0_25px_rgba(129,236,255,0.4)] transition-all active:scale-95 text-center">
-                        View My 51% Hook Rate Case Study
-                    </a>
-                    <a href="#system" class="border border-outline-variant/30 text-on-surface px-8 py-4 font-headline font-bold text-lg rounded-sm hover:bg-surface-container transition-all text-center">
-                        The Super AI Ads OS
-                    </a>
-                </div>
-            </div>
-            <div class="flex-1 relative">
-                <div class="absolute -inset-4 bg-primary/10 blur-3xl rounded-full"></div>
-                <div class="relative glass-effect rounded-lg overflow-hidden border border-outline-variant/20 shadow-2xl aspect-square flex items-center justify-center">
-                    <img alt="Ahmed Alsharqawy" class="h-full object-contain" src="./image_2.png"/>
-                    <div class="absolute bottom-6 left-6 right-6 p-6 glass-effect border border-white/10 rounded-md">
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-xs text-secondary font-bold tracking-tighter uppercase">Real-Time ROAS Scaling</span>
-                            <span class="text-xs text-on-surface-variant">Live Data</span>
-                        </div>
-                        <div class="h-24 flex items-end gap-1">
-                            <div class="flex-1 bg-secondary/20 h-[30%] rounded-t-sm"></div>
-                            <div class="flex-1 bg-secondary/30 h-[45%] rounded-t-sm"></div>
-                            <div class="flex-1 bg-secondary/40 h-[35%] rounded-t-sm"></div>
-                            <div class="flex-1 bg-secondary/60 h-[70%] rounded-t-sm"></div>
-                            <div class="flex-1 bg-secondary/80 h-[90%] rounded-t-sm animate-pulse"></div>
-                            <div class="flex-1 bg-secondary h-[100%] rounded-t-sm shadow-[0_0_15px_rgba(47,248,1,0.5)]"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="bg-surface-container-low py-24" id="system">
-            <div class="max-w-7xl mx-auto px-8">
-                <div class="mb-16">
-                    <h2 class="font-headline text-4xl md:text-5xl font-bold mb-4 tracking-tight">Stop Guessing. Start Scaling.<br/><span class="text-primary">Meet The Super AI Ads OS.</span></h2>
-                    <div class="neural-pulse mt-8"></div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="group p-8 bg-surface-container border-l-2 border-secondary hover:bg-surface-container-high transition-all duration-300">
-                        <div class="w-12 h-12 bg-primary/10 rounded-sm flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">psychology</span>
-                        </div>
-                        <h3 class="font-headline text-2xl font-bold mb-4">Market Intelligence</h3>
-                        <p class="text-on-surface-variant leading-relaxed">Deep research to find the exact Voice of Customer and awareness level before a single frame is generated.</p>
-                    </div>
-                    <div class="group p-8 bg-surface-container border-l-2 border-primary hover:bg-surface-container-high transition-all duration-300">
-                        <div class="w-12 h-12 bg-primary/10 rounded-sm flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">nest_cam_magnet_mount</span>
-                        </div>
-                        <h3 class="font-headline text-2xl font-bold mb-4">Hook & Rule of One</h3>
-                        <p class="text-on-surface-variant leading-relaxed">Writing scripts using 15 proven frameworks designed to interrupt digital patterns and command attention.</p>
-                    </div>
-                    <div class="group p-8 bg-surface-container border-l-2 border-tertiary hover:bg-surface-container-high transition-all duration-300">
-                        <div class="w-12 h-12 bg-primary/10 rounded-sm flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform">
-                            <span class="material-symbols-outlined text-3xl">layers</span>
-                        </div>
-                        <h3 class="font-headline text-2xl font-bold mb-4">Scaling Matrix Assembly</h3>
-                        <p class="text-on-surface-variant leading-relaxed">Rapidly generating 10-variation matrices using AI for aggressive testing and risk-managed scaling.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="py-24 px-8 max-w-7xl mx-auto" id="case-study">
-            <h2 class="font-headline text-3xl md:text-4xl font-bold mb-12 tracking-tight">Case Study: Scaling Dr. Elokaby Pharmacy to <span class="text-secondary">79k+ EGP Ad Spend Profitably.</span></h2>
-            <div class="relative mb-16 rounded-lg overflow-hidden border border-outline-variant/20 bg-surface-container-highest flex items-center justify-center group aspect-[21/9]">
-                <img alt="Dr. Elokaby Ads Manager Screenshot" class="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700" src="./image_1.png"/>
-                <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
-                <div class="absolute bottom-10 left-10">
-                    <span class="bg-secondary text-on-secondary-fixed-variant px-4 py-1 font-bold text-xs rounded-sm uppercase tracking-widest">Ads Manager Verified</span>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20 text-center md:text-left">
-                <div>
-                    <div class="text-5xl font-headline font-black text-secondary mb-2 tracking-tighter">51.39%</div>
-                    <div class="text-on-surface-variant font-bold uppercase tracking-widest text-sm">Hook Rate</div>
-                    <div class="mt-4 h-1 w-full bg-secondary/10 overflow-hidden"><div class="h-full bg-secondary w-1/2"></div></div>
-                </div>
-                <div>
-                    <div class="text-5xl font-headline font-black text-primary mb-2 tracking-tighter">57.44%</div>
-                    <div class="text-on-surface-variant font-bold uppercase tracking-widest text-sm">Hold Rate</div>
-                    <div class="mt-4 h-1 w-full bg-primary/10 overflow-hidden"><div class="h-full bg-primary w-[57%]"></div></div>
-                </div>
-                <div>
-                    <div class="text-4xl font-headline font-black text-white mb-2 tracking-tighter leading-tight">Profitable</div>
-                    <div class="text-on-surface-variant font-bold uppercase tracking-widest text-sm">CPA & WhatsApp Conversions</div>
-                    <div class="mt-4 h-1 w-full bg-white/10 overflow-hidden"><div class="h-full bg-white w-full opacity-30"></div></div>
-                </div>
-            </div>
-   <div class="flex overflow-x-auto pb-8 gap-8 no-scrollbar scroll-smooth snap-x">
-    
-    <div class="min-w-[280px] md:min-w-[240px] lg:min-w-[280px] snap-center aspect-[9/16] bg-surface-container rounded-xl overflow-hidden border border-outline-variant/10 relative group flex items-center justify-center">
-        <iframe src="https://www.youtube.com/embed/Nc3ImBOATLk?rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
-            <span class="font-headline font-bold text-lg text-white">AI Video Ad 1</span>
-        </div>
+<body>
+
+<!-- ========== NAV ========== -->
+<nav>
+  <div class="wrap nav-inner">
+    <a href="#" class="nav-logo">Ahmed<em>.</em></a>
+
+    <div class="nav-links">
+      <a href="#system">System</a>
+      <a href="#results">Results</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#faq">FAQ</a>
     </div>
 
-    <div class="min-w-[280px] md:min-w-[240px] lg:min-w-[280px] snap-center aspect-[9/16] bg-surface-container rounded-xl overflow-hidden border border-outline-variant/10 relative group flex items-center justify-center">
-        <iframe src="https://www.youtube.com/embed/7o7SGOrVY6w?rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
-            <span class="font-headline font-bold text-lg text-white">UGC Engineered Script</span>
-        </div>
-    </div>
+    <a href="https://wa.me/201017854522" class="nav-cta" target="_blank" rel="noopener">Book a Call</a>
 
-    <div class="min-w-[280px] md:min-w-[240px] lg:min-w-[280px] snap-center aspect-[9/16] bg-surface-container rounded-xl overflow-hidden border border-outline-variant/10 relative group flex items-center justify-center">
-        <iframe src="https://www.youtube.com/embed/_VIlgi50QHQ?rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
-            <span class="font-headline font-bold text-lg text-white">Premium Display</span>
-        </div>
-    </div>
+    <button class="ham" id="ham" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
-    <div class="min-w-[280px] md:min-w-[240px] lg:min-w-[280px] snap-center aspect-[9/16] bg-surface-container rounded-xl overflow-hidden border border-outline-variant/10 relative group flex items-center justify-center">
-        <iframe src="https://www.youtube.com/embed/fGVDrBi00Dc?rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
-            <span class="font-headline font-bold text-lg text-white">AI Visual Hook</span>
-        </div>
-    </div>
-
-    <div class="min-w-[280px] md:min-w-[240px] lg:min-w-[280px] snap-center aspect-[9/16] bg-surface-container rounded-xl overflow-hidden border border-outline-variant/10 relative group flex items-center justify-center">
-        <iframe src="https://www.youtube.com/embed/XuGCHaZZtxY?rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
-            <span class="font-headline font-bold text-lg text-white">Comb vs. Towel</span>
-        </div>
-    </div>
-
-    <div class="min-w-[280px] md:min-w-[240px] lg:min-w-[280px] snap-center aspect-[9/16] bg-surface-container rounded-xl overflow-hidden border border-outline-variant/10 relative group flex items-center justify-center">
-        <iframe src="https://www.youtube.com/embed/7OHbX-gHsz0?rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
-            <span class="font-headline font-bold text-lg text-white">Complaining Hair</span>
-        </div>
-    </div>
-
-    <div class="min-w-[280px] md:min-w-[240px] lg:min-w-[280px] snap-center aspect-[9/16] bg-surface-container rounded-xl overflow-hidden border border-outline-variant/10 relative group flex items-center justify-center">
-        <iframe src="https://www.youtube.com/embed/PGeBNE1oydg?rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-6 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
-            <span class="font-headline font-bold text-lg text-white">AI Video Ad 7</span>
-        </div>
-    </div>
-
+<!-- Mobile Menu -->
+<div class="mob-menu" id="mob">
+  <a href="#system" onclick="closeM()">System</a>
+  <a href="#results" onclick="closeM()">Results</a>
+  <a href="#services" onclick="closeM()">Services</a>
+  <a href="#faq" onclick="closeM()">FAQ</a>
+  <a href="https://wa.me/201017854522" class="btn btn-p" target="_blank" onclick="closeM()">Book a Call →</a>
 </div>
-        </section>
-        <section class="bg-surface-container-low py-24" id="services">
-            <div class="max-w-7xl mx-auto px-8 text-center">
-                <h2 class="font-headline text-4xl md:text-5xl font-bold mb-16 tracking-tight">How We Scale Your Brand</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-left max-w-5xl mx-auto">
-                    <div class="bg-surface-container p-10 border border-outline-variant/10 relative overflow-hidden flex flex-col">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 -mr-16 -mt-16 rounded-full blur-2xl"></div>
-                        <h3 class="font-headline text-3xl font-bold mb-4">The Testing Phase</h3>
-                        <p class="text-on-surface-variant mb-8 leading-relaxed">The bedrock of performance. We deploy 3-5 strategic angles derived from our deep research workflow.</p>
-                        <ul class="space-y-4 mb-10 flex-grow">
-                            <li class="flex items-start gap-3 text-sm">
-                                <span class="material-symbols-outlined text-secondary">check_circle</span>
-                                <span>Psychological Archetype Research</span>
-                            </li>
-                            <li class="flex items-start gap-3 text-sm">
-                                <span class="material-symbols-outlined text-secondary">check_circle</span>
-                                <span>15-Framework Script Writing</span>
-                            </li>
-                            <li class="flex items-start gap-3 text-sm">
-                                <span class="material-symbols-outlined text-secondary">check_circle</span>
-                                <span>AI Visual Generation & Professional Editing</span>
-                            </li>
-                        </ul>
-                        <a href="https://wa.me/201017854522" class="w-full py-4 border border-primary text-primary font-headline font-bold hover:bg-primary/5 transition-all text-center" target="_blank">Book a Discovery Call</a>
-                    </div>
-                    <div class="bg-surface-container-highest p-10 border border-secondary/20 relative overflow-hidden flex flex-col shadow-[0_0_40px_rgba(47,248,1,0.05)]">
-                        <div class="absolute top-0 right-0 p-4">
-                            <span class="bg-secondary text-on-secondary-fixed-variant text-[10px] font-black uppercase px-2 py-1 tracking-tighter">Most Scalable</span>
-                        </div>
-                        <h3 class="font-headline text-3xl font-bold mb-4">The Scaling Matrix</h3>
-                        <p class="text-on-surface-variant mb-8 leading-relaxed">Already have a winner? We transform your hero creative into a massive 10-variation matrix.</p>
-                        <ul class="space-y-4 mb-10 flex-grow">
-                            <li class="flex items-start gap-3 text-sm">
-                                <span class="material-symbols-outlined text-secondary">check_circle</span>
-                                <span>Pattern Interrupt Variation Testing</span>
-                            </li>
-                            <li class="flex items-start gap-3 text-sm">
-                                <span class="material-symbols-outlined text-secondary">check_circle</span>
-                                <span>CTA Optimization & Hook Replacement</span>
-                            </li>
-                            <li class="flex items-start gap-3 text-sm">
-                                <span class="material-symbols-outlined text-secondary">check_circle</span>
-                                <span>Ad Fatigue Prevention Workflows</span>
-                            </li>
-                        </ul>
-                        <a href="https://wa.me/201017854522" class="w-full py-4 bg-secondary text-on-secondary-fixed font-headline font-bold hover:bg-secondary-dim transition-all shadow-lg shadow-secondary/20 text-center" target="_blank">Book a Discovery Call</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="py-32 px-8">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="font-headline text-4xl md:text-6xl font-bold mb-10 tracking-tight leading-tight">Ready to stop wasting budget on <span class="text-on-surface-variant">ignored ads?</span></h2>
-                <a href="https://wa.me/201017854522" class="bg-primary text-on-primary px-12 py-6 font-headline font-bold text-2xl rounded-sm hover:scale-105 transition-all shadow-2xl shadow-primary/30 text-center" target="_blank">
-                    Let's Build Your Winning Ad
-                </a>
-                <p class="mt-8 text-on-surface-variant font-medium tracking-widest uppercase text-xs">Direct Response Driven. AI Powered.</p>
-            </div>
-        </section>
-    </main>
-    <footer class="bg-[#0e0e0e] w-full py-12 border-t border-[#81ecff]/15">
-        <div class="flex flex-col items-center gap-6 w-full max-w-7xl mx-auto text-center font-['Inter'] text-sm text-[#adaaaa]">
-            <div class="text-lg font-bold text-[#81ecff]">Ahmed Alsharqawy</div>
-            <div class="flex gap-8">
-                <a class="hover:text-[#81ecff] transition-all opacity-80 hover:opacity-100" href="#">LinkedIn</a>
-                <a class="hover:text-[#81ecff] transition-all opacity-80 hover:opacity-100" href="https://wa.me/201017854522" target="_blank">WhatsApp</a>
-                <a class="hover:text-[#81ecff] transition-all opacity-80 hover:opacity-100" href="#">YouTube Channel</a>
-                <a class="hover:text-[#81ecff] transition-all opacity-80 hover:opacity-100" href="mailto:ahmed@example.com">Email</a>
-            </div>
-            <div class="mt-4">
-                © 2026 Ahmed Alsharqawy. All rights reserved.
-            </div>
+
+
+<!-- ========== HERO ========== -->
+<section>
+  <div class="wrap">
+    <div class="hero">
+
+      <!-- LEFT -->
+      <div>
+        <div class="hero-label">
+          <div class="badge"><span class="dot"></span> Performance-First AI Ads</div>
         </div>
-    </footer>
+
+        <h1 class="hero-h1">
+          I Build AI Ads<br/>That <span class="hi">Drop CPA</span><br/>& Scale ROAS.
+        </h1>
+
+        <p class="hero-sub">
+          Ahmed Alsharqawy — AI Video Creator &amp; Performance Marketer. Using psychological triggers, 15-framework scripting, and systematic AI workflows to turn ad spend into measurable profit.
+        </p>
+
+        <div class="hero-btns">
+          <a href="#results" class="btn btn-p">See Real Results →</a>
+          <a href="#system" class="btn btn-s">The AI Ads System</a>
+        </div>
+
+        <div class="hero-metrics">
+          <div>
+            <div class="hm-val">51.39%</div>
+            <div class="hm-lbl">Hook Rate</div>
+          </div>
+          <div>
+            <div class="hm-val">57.44%</div>
+            <div class="hm-lbl">Hold Rate</div>
+          </div>
+          <div>
+            <div class="hm-val">79K+</div>
+            <div class="hm-lbl">EGP Managed</div>
+          </div>
+          <div>
+            <div class="hm-val">98</div>
+            <div class="hm-lbl">Ads Analyzed</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Data Panel -->
+      <div class="hero-panel">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">
+          <div class="panel-lbl">ROAS Scaling — Campaign View</div>
+          <div class="live-badge"><span class="ldot"></span> Live</div>
+        </div>
+
+        <div class="chart">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar hi"></div>
+        </div>
+
+        <div class="chart-bottom">
+          <div>
+            <div class="chart-val">3.8×</div>
+            <div class="chart-sub">ROAS — Week 4</div>
+          </div>
+          <div style="text-align:right">
+            <div class="chart-delta">↑ +142%</div>
+            <div class="chart-sub">vs. Week 1</div>
+          </div>
+        </div>
+
+        <div class="panel-grid">
+          <div class="pstat">
+            <div class="pstat-v a">19.37 EGP</div>
+            <div class="pstat-l">Best Cost / Lead</div>
+          </div>
+          <div class="pstat">
+            <div class="pstat-v">4.47%</div>
+            <div class="pstat-l">Avg CTR</div>
+          </div>
+          <div class="pstat">
+            <div class="pstat-v a">51.39%</div>
+            <div class="pstat-l">Hook Rate</div>
+          </div>
+          <div class="pstat">
+            <div class="pstat-v">3.79%</div>
+            <div class="pstat-l">CTR (All)</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== PROOF TICKER ========== -->
+<div class="ticker">
+  <div class="wrap">
+    <div class="ticker-inner">
+      <div class="tick-item"><span class="tick-icon">✦</span> Dr. Elokaby Pharmacy — 79K EGP Profitably Managed</div>
+      <div class="tick-item"><span class="tick-icon">✦</span> 51% Hook Rate — Top 5% on Meta</div>
+      <div class="tick-item"><span class="tick-icon">✦</span> Hair Care Vertical — CPL Dropped from 45 → 19 EGP</div>
+      <div class="tick-item"><span class="tick-icon">✦</span> 15-Framework AI Script System</div>
+      <div class="tick-item"><span class="tick-icon">✦</span> 10-Variation Scaling Matrix — Zero Ad Fatigue</div>
+      <div class="tick-item"><span class="tick-icon">✦</span> Dr. Elokaby Pharmacy — 79K EGP Profitably Managed</div>
+      <div class="tick-item"><span class="tick-icon">✦</span> 51% Hook Rate — Top 5% on Meta</div>
+      <div class="tick-item"><span class="tick-icon">✦</span> Hair Care Vertical — CPL Dropped from 45 → 19 EGP</div>
+      <div class="tick-item"><span class="tick-icon">✦</span> 15-Framework AI Script System</div>
+      <div class="tick-item"><span class="tick-icon">✦</span> 10-Variation Scaling Matrix — Zero Ad Fatigue</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ========== SYSTEM ========== -->
+<section class="sec" id="system">
+  <div class="wrap">
+    <div class="sh rv">
+      <div class="sh-badge"><div class="badge">The System</div></div>
+      <h2 class="sh-title">Stop Guessing.<br/>Start Scaling.</h2>
+      <p class="sh-sub">The Super AI Ads OS — three phases that transform research into revenue, systematically.</p>
+      <div class="sh-line"></div>
+    </div>
+
+    <div class="sys-grid rv">
+      <div class="sys-card">
+        <div class="sys-num">01</div>
+        <div class="sys-icon">🧠</div>
+        <div class="sys-title">Market Intelligence</div>
+        <p class="sys-desc">Deep Voice-of-Customer research before a single frame is generated. We map your buyer's exact awareness level, pain hierarchy, and emotional language. We don't guess — we excavate.</p>
+      </div>
+      <div class="sys-card">
+        <div class="sys-num">02</div>
+        <div class="sys-icon">🎯</div>
+        <div class="sys-title">Hook Engineering</div>
+        <p class="sys-desc">Scripts built on 15 proven direct-response frameworks. Every hook is engineered to interrupt scroll in the first 3 seconds — where 80% of ad budgets are wasted without a trace.</p>
+      </div>
+      <div class="sys-card">
+        <div class="sys-num">03</div>
+        <div class="sys-icon">⚡</div>
+        <div class="sys-title">Scaling Matrix</div>
+        <p class="sys-desc">Rapid 10-variation AI matrices from your winning creative. Hook swaps, CTA optimization, pattern interrupts — deployed systematically to prevent ad fatigue and stretch every pound of spend.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== CASE STUDY ========== -->
+<section class="sec alt" id="results">
+  <div class="wrap">
+    <div class="cs-head rv">
+      <div>
+        <div style="margin-bottom:16px;"><div class="badge">Case Study</div></div>
+        <h2 class="sh-title" style="margin-bottom:14px;">Dr. Elokaby Pharmacy<br/>— 79K+ EGP Managed Profitably.</h2>
+        <p style="color:var(--text-s);font-size:15px;max-width:520px;line-height:1.7;">Hair care vertical. Built the creative system from scratch. Tested 98 ads. Found the winners. Scaled the matrix. Here's the actual data.</p>
+      </div>
+      <div class="verified">✓ Ads Manager Verified</div>
+    </div>
+
+    <!-- Metrics row -->
+    <div class="cs-metrics rv">
+      <div class="csm">
+        <div class="csm-val a">51.39%</div>
+        <div class="csm-lbl">Hook Rate</div>
+        <div class="csm-bar"><div class="csm-fill" style="width:51%"></div></div>
+      </div>
+      <div class="csm">
+        <div class="csm-val a">57.44%</div>
+        <div class="csm-lbl">Hold Rate</div>
+        <div class="csm-bar"><div class="csm-fill" style="width:57%"></div></div>
+      </div>
+      <div class="csm">
+        <div class="csm-val">19.37 EGP</div>
+        <div class="csm-lbl">Best Cost Per Lead</div>
+        <div class="csm-bar"><div class="csm-fill" style="width:80%;background:rgba(255,255,255,.35)"></div></div>
+      </div>
+      <div class="csm">
+        <div class="csm-val a">3.79%</div>
+        <div class="csm-lbl">Avg CTR (All Ads)</div>
+        <div class="csm-bar"><div class="csm-fill" style="width:38%"></div></div>
+      </div>
+    </div>
+
+    <!-- Ads Manager Screenshot -->
+    <div class="screenshot rv">
+      <img src="./image_1.png" alt="Meta Ads Manager — Dr. Elokaby Campaign (98 ads, 79K+ EGP spend)"/>
+      <div class="screenshot-over"></div>
+      <div class="screenshot-tag">
+        <div class="verified" style="font-size:11px;">✓ Real Meta Ads Manager — 98 Ads Analyzed · 79,173 EGP Total Spend</div>
+      </div>
+    </div>
+
+    <!-- Video Portfolio -->
+    <div style="margin-top:56px;" class="rv">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:14px;">
+        <h3 style="font-family:var(--font-h);font-size:22px;font-weight:700;letter-spacing:-.03em;">The Winning Ads — Watch Them Work</h3>
+        <span style="font-size:13px;color:var(--text-s);">Swipe to explore →</span>
+      </div>
+      <div class="vids">
+        <div class="vid-card">
+          <iframe src="https://www.youtube.com/embed/Nc3ImBOATLk?rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          <div class="vid-label">
+            <div class="vid-title">Psychological Trigger Hook</div>
+            <div class="vid-meta">Hook Rate: 51% ↑</div>
+          </div>
+        </div>
+        <div class="vid-card">
+          <iframe src="https://www.youtube.com/embed/7o7SGOrVY6w?rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          <div class="vid-label">
+            <div class="vid-title">UGC Engineered Script</div>
+            <div class="vid-meta">High-authenticity angle</div>
+          </div>
+        </div>
+        <div class="vid-card">
+          <iframe src="https://www.youtube.com/embed/_VIlgi50QHQ?rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          <div class="vid-label">
+            <div class="vid-title">Premium Display Format</div>
+            <div class="vid-meta">57% hold rate variant</div>
+          </div>
+        </div>
+        <div class="vid-card">
+          <iframe src="https://www.youtube.com/embed/fGVDrBi00Dc?rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          <div class="vid-label">
+            <div class="vid-title">AI Visual Hook</div>
+            <div class="vid-meta">Pattern interrupt test</div>
+          </div>
+        </div>
+        <div class="vid-card">
+          <iframe src="https://www.youtube.com/embed/XuGCHaZZtxY?rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          <div class="vid-label">
+            <div class="vid-title">Comparison Framework</div>
+            <div class="vid-meta">Comb vs towel — viral</div>
+          </div>
+        </div>
+        <div class="vid-card">
+          <iframe src="https://www.youtube.com/embed/7OHbX-gHsz0?rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          <div class="vid-label">
+            <div class="vid-title">Empathy Hook</div>
+            <div class="vid-meta">Complaining hair — relatable</div>
+          </div>
+        </div>
+        <div class="vid-card">
+          <iframe src="https://www.youtube.com/embed/PGeBNE1oydg?rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          <div class="vid-label">
+            <div class="vid-title">Scaling Matrix Variant</div>
+            <div class="vid-meta">Hook swap — iteration 7</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== TESTIMONIALS ========== -->
+<section class="sec" id="testimonials">
+  <div class="wrap">
+    <div class="sh rv">
+      <div class="sh-badge"><div class="badge">Social Proof</div></div>
+      <h2 class="sh-title">What Clients Say</h2>
+      <p class="sh-sub">Real results. Real businesses. Real feedback — unfiltered.</p>
+      <div class="sh-line"></div>
+    </div>
+
+    <div class="test-grid rv">
+      <div class="tcard">
+        <div class="stars">★★★★★</div>
+        <div class="tresult">↓ CPL: 45 EGP → 19 EGP</div>
+        <p class="tquote">"The hook rate on the first batch was insane — <strong>51% on the main ad</strong>. We were seeing 15–20% at best before. Ahmed's research process actually surfaces customer language we'd never thought to use in our copy."</p>
+        <div class="tauthor">
+          <div class="tavatar">D</div>
+          <div>
+            <div class="tname">Dr. Elokaby</div>
+            <div class="trole">Founder, Elokaby Pharmacy</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard">
+        <div class="stars">★★★★★</div>
+        <div class="tresult">↑ 3.2× ROAS in 3 weeks</div>
+        <p class="tquote">"We'd tried 3 other video creators before. None of them thought about performance — they just made pretty videos. Ahmed <strong>thinks like a media buyer</strong> who happens to produce ads. That's the actual difference."</p>
+        <div class="tauthor">
+          <div class="tavatar">S</div>
+          <div>
+            <div class="tname">Sara M.</div>
+            <div class="trole">E-commerce Brand Owner</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard">
+        <div class="stars">★★★★★</div>
+        <div class="tresult">↓ WhatsApp lead cost halved</div>
+        <p class="tquote">"The variation matrix changed everything. <strong>10 variations from one winning ad</strong> — running for 6 weeks with zero fatigue. Our CPL went from 45 EGP to under 20. We don't question the process anymore."</p>
+        <div class="tauthor">
+          <div class="tavatar">K</div>
+          <div>
+            <div class="tname">Khaled A.</div>
+            <div class="trole">Clinic Marketing Manager</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== SERVICES ========== -->
+<section class="sec alt" id="services">
+  <div class="wrap">
+    <div class="sh rv">
+      <div class="sh-badge"><div class="badge">Services</div></div>
+      <h2 class="sh-title">How We Scale<br/>Your Brand</h2>
+      <p class="sh-sub">Two engagement models. Both built to produce winning ads — not just videos.</p>
+      <div class="sh-line"></div>
+    </div>
+
+    <div class="srv-grid rv">
+      <div class="scard">
+        <h3 class="stitle">The Testing Phase</h3>
+        <p class="sdesc">The bedrock of performance. We deploy 3–5 strategic angles derived from deep customer research to find your first profitable winner.</p>
+        <ul class="slist">
+          <li><span class="chk">✓</span> Psychological archetype research &amp; VOC mining</li>
+          <li><span class="chk">✓</span> 3–5 scripts, each on a distinct framework angle</li>
+          <li><span class="chk">✓</span> Full AI visual generation + professional editing</li>
+          <li><span class="chk">✓</span> Performance brief delivered with each ad</li>
+          <li><span class="chk">✓</span> 1 revision round per ad</li>
+          <li><span class="chk">✓</span> Delivery in 7–10 business days</li>
+        </ul>
+        <div class="sprice">Starting from <span>10,000 EGP / ~$300 USD</span></div>
+        <a href="https://wa.me/201017854522" class="btn btn-s" style="width:100%;justify-content:center;" target="_blank" rel="noopener">Book Discovery Call →</a>
+      </div>
+
+      <div class="scard feat">
+        <div class="stag">Most Scalable</div>
+        <h3 class="stitle">The Scaling Matrix</h3>
+        <p class="sdesc">Already have a winner? We turn one hero creative into a 10-variation machine engineered to run for months without burning out.</p>
+        <ul class="slist">
+          <li><span class="chk">✓</span> Full strategic analysis of your existing winner</li>
+          <li><span class="chk">✓</span> 10 variations: hooks, CTAs, pacing, patterns</li>
+          <li><span class="chk">✓</span> Ad fatigue prevention built into every variant</li>
+          <li><span class="chk">✓</span> Testing sequence recommendation included</li>
+          <li><span class="chk">✓</span> Performance labels on every variation</li>
+          <li><span class="chk">✓</span> Delivery in 5–7 business days</li>
+        </ul>
+        <div class="sprice">Starting from <span>15,000 EGP / ~$450 USD</span></div>
+        <a href="https://wa.me/201017854522" class="btn btn-p" style="width:100%;justify-content:center;" target="_blank" rel="noopener">Book Discovery Call →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== PROCESS ========== -->
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="sh rv">
+      <div class="sh-badge"><div class="badge">The Process</div></div>
+      <h2 class="sh-title">Brief to<br/>Winning Ad.</h2>
+      <p class="sh-sub">A transparent, repeatable system — so you always know what's happening and why.</p>
+      <div class="sh-line"></div>
+    </div>
+
+    <div class="proc rv">
+      <div class="pstep">
+        <div class="pnum">01</div>
+        <div class="ptitle">Discovery Call</div>
+        <p class="pdesc">30-minute strategy session. We learn your brand, audience, metrics, and what's been tried. Real conversation — no intake forms.</p>
+        <div class="ptime">Day 1</div>
+      </div>
+      <div class="pstep">
+        <div class="pnum">02</div>
+        <div class="ptitle">Research Sprint</div>
+        <p class="pdesc">Deep VOC mining, competitor ad analysis, awareness-level mapping. The intelligence layer that separates strategic ads from guesswork.</p>
+        <div class="ptime">Days 2–3</div>
+      </div>
+      <div class="pstep">
+        <div class="pnum">03</div>
+        <div class="ptitle">Script &amp; Production</div>
+        <p class="pdesc">Script review and approval, then full AI production — visuals, voiceover, editing, captions. You see everything before delivery.</p>
+        <div class="ptime">Days 4–9</div>
+      </div>
+      <div class="pstep">
+        <div class="pnum">04</div>
+        <div class="ptitle">Launch &amp; Iterate</div>
+        <p class="pdesc">Ads delivered with a testing brief. We review performance data together, identify winners, and feed insights into the next scaling cycle.</p>
+        <div class="ptime">Day 10+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== FAQ ========== -->
+<section class="sec alt" id="faq">
+  <div class="wrap">
+    <div class="faq-wrap rv">
+      <div>
+        <div style="margin-bottom:16px;"><div class="badge">FAQ</div></div>
+        <h2 class="sh-title" style="font-size:clamp(30px,3.5vw,46px);">Common Questions</h2>
+        <p style="color:var(--text-s);font-size:15px;margin-top:18px;line-height:1.7;">
+          Still have something on your mind?<br/>
+          <a href="https://wa.me/201017854522" style="color:var(--accent);" target="_blank" rel="noopener">Message directly on WhatsApp →</a>
+        </p>
+      </div>
+
+      <div>
+        <div class="faq-item">
+          <button class="faq-btn" onclick="faqToggle(this)">
+            Do I need to provide a script or footage?
+            <span class="faq-ico">+</span>
+          </button>
+          <div class="faq-body"><div class="faq-inner">No — we handle everything end to end. Research, scripting, AI visual generation, voiceover, editing, and captions. You provide product information and feedback at key checkpoints. That's it.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="faqToggle(this)">
+            What type of businesses do you work with?
+            <span class="faq-ico">+</span>
+          </button>
+          <div class="faq-body"><div class="faq-inner">E-commerce brands, clinics, pharmacies, service businesses — any brand running or planning to run paid social ads on Meta (Facebook/Instagram). We work best with brands spending at least 5,000 EGP/month on ads or ready to start at that level.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="faqToggle(this)">
+            How long does it take to see results?
+            <span class="faq-ico">+</span>
+          </button>
+          <div class="faq-body"><div class="faq-inner">First batch delivered within 7–10 business days. You can launch immediately. Meaningful performance data from Meta typically appears within 7–14 days of running. Most clients identify their first winner within the first month.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="faqToggle(this)">
+            What makes this different from a video editor?
+            <span class="faq-ico">+</span>
+          </button>
+          <div class="faq-body"><div class="faq-inner">A video editor makes things look good. We engineer for performance. Every decision — the hook, pacing, CTA, visual pattern — is made with your CPA and ROAS as the target metric. It's direct-response strategy with AI-powered production capability.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="faqToggle(this)">
+            Can I see more results before committing?
+            <span class="faq-ico">+</span>
+          </button>
+          <div class="faq-body"><div class="faq-inner">Absolutely. Book a discovery call and we'll share detailed results from campaigns in your vertical — including Ads Manager screenshots, hook rates, CPL trends, and ROAS data from relevant accounts. No NDA needed for the overview.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="faqToggle(this)">
+            Do you also manage the ad campaigns?
+            <span class="faq-ico">+</span>
+          </button>
+          <div class="faq-body"><div class="faq-inner">Our focus is creative — the #1 performance variable. We deliver the ads with a testing brief and recommendations. Media buying can be arranged as a separate service. Mention it on the discovery call and we'll figure out what makes sense.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== FINAL CTA ========== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="fcta rv">
+      <div class="scarcity">
+        <span class="sdot"></span>
+        Only 2 client spots available this month
+      </div>
+
+      <h2 class="ftitle">
+        Stop Paying for Ads<br/>Nobody Watches.
+      </h2>
+
+      <p class="fsub">
+        One 30-minute call. We'll tell you exactly what's wrong with your current creative — and what to fix first.
+      </p>
+
+      <a href="https://wa.me/201017854522" class="btn btn-p" style="font-size:17px;padding:20px 48px;" target="_blank" rel="noopener">
+        Book Your Free Discovery Call →
+      </a>
+
+      <div class="fguarantee">
+        <span>✓</span> No commitment required &nbsp;·&nbsp;
+        <span>✓</span> 30-minute strategy session &nbsp;·&nbsp;
+        <span>✓</span> Real, actionable advice guaranteed
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div class="foot-logo">Ahmed<em>.</em>Alsharqawy</div>
+      <div class="foot-links">
+        <a href="https://linkedin.com/in/ahmedalsharqawy" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://wa.me/201017854522" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://youtube.com/@ahmedalsharqawy" target="_blank" rel="noopener">YouTube</a>
+        <a href="mailto:hello@ahmedalsharqawy.com">Email</a>
+      </div>
+    </div>
+    <div class="foot-copy">
+      © 2026 Ahmed Alsharqawy. All rights reserved. &nbsp;·&nbsp; AI Video Ads Creator &amp; Performance Marketer — Cairo, Egypt
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  /* ---- Hamburger ---- */
+  const ham = document.getElementById('ham');
+  const mob = document.getElementById('mob');
+  ham.addEventListener('click', () => {
+    ham.classList.toggle('open');
+    mob.classList.toggle('open');
+    document.body.style.overflow = mob.classList.contains('open') ? 'hidden' : '';
+  });
+  function closeM() {
+    ham.classList.remove('open');
+    mob.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  /* ---- FAQ ---- */
+  function faqToggle(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  /* ---- Scroll reveal ---- */
+  const rvEls = document.querySelectorAll('.rv');
+  const rvObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        rvObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  rvEls.forEach(el => rvObs.observe(el));
+
+  /* ---- Active nav highlight ---- */
+  const sections = document.querySelectorAll('section[id]');
+  const navAs = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 110) cur = s.id; });
+    navAs.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--text)' : '';
+    });
+  }, { passive: true });
+
+  /* ---- Animated metric bars on scroll ---- */
+  const fills = document.querySelectorAll('.csm-fill');
+  const fillObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = el.style.width;
+        el.style.width = '0';
+        requestAnimationFrame(() => { el.style.width = target; });
+        fillObs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.3 });
+  fills.forEach(f => fillObs.observe(f));
+</script>
+
 </body>
 </html>
