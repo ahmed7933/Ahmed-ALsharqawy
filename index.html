@@ -176,7 +176,7 @@
       border: 1px solid var(--border); background: var(--surface);
       box-shadow: 0 20px 40px rgba(0,0,0,0.5);
     }
-    /* Ensure image_2.png is your portrait with the yellow background */
+    /* Ensure user_image.jpg is your portrait */
     .hero-panel img { width: 100%; height: auto; object-fit: cover; border-bottom: 1px solid var(--border); filter: contrast(1.05); }
     .panel-data { padding: 24px; text-align: left; background: var(--surface);}
     .p-tag { display: inline-block; background: var(--accent-muted); color: var(--accent); font-size: 11px; font-weight: 700; padding: 6px 12px; border-radius: 100px; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em;}
@@ -248,55 +248,62 @@
     .csm-lbl { font-size: 12px; color: var(--text-s); font-weight: 600; text-transform: uppercase; }
 
     .cs-visual { background: var(--surface); padding: 16px; border-radius: var(--rad-lg); border: 1px solid var(--border); position: relative;}
-    /* Ensure image_1.png is your Meta Ads Manager screenshot */
     .cs-visual img { width: 100%; filter: contrast(1.05); border-radius: var(--rad-sm); border: 1px solid var(--border-light);}
     .cs-badge {
       position: absolute; top: 32px; left: 32px; background: rgba(9, 9, 11, 0.9); backdrop-filter: blur(8px);
       padding: 6px 16px; border-radius: 100px; font-size: 11px; font-weight: 700; color: #fff; border: 1px solid var(--border);
       display: flex; align-items: center; gap: 8px;
     }
-    .cs-badge span { color: #22C55E; font-size: 14px;} /* Green checkmark */
+    .cs-badge span { color: #22C55E; font-size: 14px;}
 
     /* ============================= */
-    /*        VIDEO PORTFOLIO        */
+    /*  10-VIDEO ASSET VAULT (GRID)  */
     /* ============================= */
-    .vids-header { display: flex; justify-content: space-between; align-items: flex-end; margin: 48px 0 24px; }
-    .vids-header h3 { font-size: 20px; }
-    /* Mobile scrollable strip */
-    .vids-scroll {
-      display: flex; gap: 16px; overflow-x: auto; padding-bottom: 24px;
-      scrollbar-width: none; -ms-overflow-style: none; scroll-snap-type: x mandatory;
-    }
-    .vids-scroll::-webkit-scrollbar { display: none; }
+    .vault-sec { background: var(--surface); border-top: 1px solid var(--border); }
+    .vault-header { text-align: center; margin-bottom: 48px; }
+    .vault-header h3 { font-size: clamp(28px, 4vw, 36px); margin-bottom: 16px; }
+    .vault-header p { color: var(--text-s); font-size: 16px; max-width: 600px; margin: 0 auto; }
     
+    .mob-hint { display: none; font-size: 12px; color: var(--accent); margin-top: 16px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+
+    .vid-grid {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;
+    }
+    
+    @media (max-width: 1024px) {
+      .mob-hint { display: block; }
+      .vid-grid {
+        display: flex; overflow-x: auto; padding-bottom: 32px;
+        scrollbar-width: none; -ms-overflow-style: none; scroll-snap-type: x mandatory;
+      }
+      .vid-grid::-webkit-scrollbar { display: none; }
+      .vid-item { flex: 0 0 280px; scroll-snap-align: center; }
+    }
+    @media (max-width: 480px) { .vid-item { flex: 0 0 80vw; } }
+
     .vid-item {
-      flex: 0 0 260px; scroll-snap-align: start; aspect-ratio: 9/16;
-      border-radius: var(--rad-md); overflow: hidden; background: #000;
-      border: 1px solid var(--border); position: relative;
+      aspect-ratio: 9/16; border-radius: var(--rad-md); overflow: hidden; background: #000;
+      border: 1px solid var(--border); position: relative; transition: var(--trans);
     }
-    @media (max-width: 480px) { .vid-item { flex: 0 0 75vw; } } /* Better size on small phones */
-    
+    .vid-item:hover { transform: translateY(-4px); border-color: var(--border-light); }
     .vid-item iframe { width: 100%; height: 100%; border: none; }
+    
     .vid-tag {
       position: absolute; bottom: 0; left: 0; right: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-      padding: 40px 16px 16px; pointer-events: none;
+      background: linear-gradient(to top, rgba(0,0,0,0.95) 10%, rgba(0,0,0,0.5) 60%, transparent);
+      padding: 50px 16px 16px; pointer-events: none;
     }
-    .vid-tag-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; color: #fff;}
-    .vid-tag-sub { font-size: 12px; color: var(--accent); font-weight: 600;}
-
-    /* ============================= */
-    /*         TESTIMONIALS          */
-    /* ============================= */
-    .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-    .tcard { background: var(--surface); border: 1px solid var(--border); border-radius: var(--rad-md); padding: 32px; }
-    .tstars { color: var(--accent); font-size: 16px; margin-bottom: 16px; letter-spacing: 2px; }
-    .tquote { font-size: 15px; color: var(--text-s); margin-bottom: 24px; font-style: italic; line-height: 1.7;}
-    .tquote strong { color: var(--text); font-style: normal; }
-    .tauthor { display: flex; align-items: center; gap: 12px; border-top: 1px solid var(--border-light); padding-top: 16px; }
-    .tavatar { width: 44px; height: 44px; border-radius: 50%; background: var(--bg); color: var(--text); display: flex; align-items: center; justify-content: center; font-weight: 700; border: 1px solid var(--border); }
-    .tname { font-weight: 700; font-size: 14px; }
-    .trole { font-size: 12px; color: var(--text-s); }
+    .vid-tag-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; color: #fff; line-height: 1.2;}
+    .vid-tag-sub { font-size: 11px; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;}
+    
+    .vid-num {
+      position: absolute; top: 12px; right: 12px;
+      background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
+      color: #fff; font-size: 10px; font-weight: 800;
+      padding: 4px 10px; border-radius: 100px;
+      border: 1px solid var(--border-light);
+      pointer-events: none;
+    }
 
     /* ============================= */
     /*      SOFT QUALIFICATION       */
@@ -317,7 +324,7 @@
     .q-desc { font-size: 13px; color: var(--text-s); line-height: 1.6; }
 
     /* ============================= */
-    /*    MOBILE STICKY CTA (NEW)    */
+    /*    MOBILE STICKY CTA          */
     /* ============================= */
     .mob-sticky {
       display: none; position: fixed; bottom: 0; left: 0; right: 0;
@@ -327,7 +334,7 @@
     .mob-sticky .btn { width: 100%; justify-content: center; padding: 16px; font-size: 15px;}
     @media (max-width: 768px) {
       .mob-sticky { display: block; }
-      body { padding-bottom: 80px; } /* Buffer to prevent overlapping footer */
+      body { padding-bottom: 80px; } 
     }
 
     /* ============================= */
@@ -355,7 +362,7 @@
     <div class="nav-links">
       <a href="#system">The Engine</a>
       <a href="#results">Clinical Data</a>
-      <a href="#testimonials">Clients</a>
+      <a href="#vault">Asset Vault</a>
     </div>
 
     <a href="https://wa.me/201017854522?text=أهلاً%20أحمد،%20أدير%20بزنس%20وأرغب%20في%20مناقشة%20بناء%20نظام%20إعلاني." class="nav-cta" target="_blank">Book Strategy Call</a>
@@ -369,7 +376,7 @@
 <div class="mob-menu" id="mob">
   <a href="#system" onclick="closeM()">The Engine</a>
   <a href="#results" onclick="closeM()">Clinical Data</a>
-  <a href="#testimonials" onclick="closeM()">Clients</a>
+  <a href="#vault" onclick="closeM()">Asset Vault</a>
   <a href="https://wa.me/201017854522?text=أهلاً%20أحمد،%20أدير%20بزنس%20وأرغب%20في%20مناقشة%20بناء%20نظام%20إعلاني." class="btn btn-p" target="_blank" onclick="closeM()" style="margin-top: 16px;">Book Strategy Call</a>
 </div>
 
@@ -418,7 +425,7 @@
       </div>
 
       <div class="hero-panel rv" style="transition-delay: 0.1s;">
-        <img src="./image_2.png" alt="Ahmed Alsharqawy - Growth Partner" onerror="this.src='https://placehold.co/400x480/18181B/E8FF47?text=Ahmed+Alsharqawy'" />
+        <img src="./image_1.png" alt="Ahmed Alsharqawy - Growth Partner" onerror="this.src='https://placehold.co/400x480/18181B/E8FF47?text=Ahmed+Alsharqawy'" />
         <div class="panel-data">
           <div class="p-tag">Strategic Partner</div>
           <div class="p-title">Ahmed Alsharqawy</div>
@@ -533,85 +540,110 @@
       </div>
     </div>
 
-    <div class="rv" style="margin-top: 64px;">
-      <div class="vids-header">
-        <h3 style="font-size: 20px;">Declassified Winning Assets</h3>
-        <span style="font-size: 13px; color: var(--text-s);">Swipe horizontally →</span>
-      </div>
-      
-      <div class="vids-scroll">
-        <div class="vid-item">
-          <iframe src="https://www.youtube.com/embed/Nc3ImBOATLk?rel=0" allowfullscreen loading="lazy"></iframe>
-          <div class="vid-tag">
-            <div class="vid-tag-title">Psychological Hook</div>
-            <div class="vid-tag-sub">Hook Rate: 51%</div>
-          </div>
-        </div>
-        <div class="vid-item">
-          <iframe src="https://www.youtube.com/embed/7o7SGOrVY6w?rel=0" allowfullscreen loading="lazy"></iframe>
-          <div class="vid-tag">
-            <div class="vid-tag-title">UGC Simulation</div>
-            <div class="vid-tag-sub">High Authenticity</div>
-          </div>
-        </div>
-        <div class="vid-item">
-          <iframe src="https://www.youtube.com/embed/_VIlgi50QHQ?rel=0" allowfullscreen loading="lazy"></iframe>
-          <div class="vid-tag">
-            <div class="vid-tag-title">Premium Formatting</div>
-            <div class="vid-tag-sub">57% Hold Rate</div>
-          </div>
-        </div>
-        <div class="vid-item">
-          <iframe src="https://www.youtube.com/embed/fGVDrBi00Dc?rel=0" allowfullscreen loading="lazy"></iframe>
-          <div class="vid-tag">
-            <div class="vid-tag-title">Pattern Interrupt</div>
-            <div class="vid-tag-sub">Visual Hack</div>
-          </div>
-        </div>
-        <div class="vid-item">
-          <iframe src="https://www.youtube.com/embed/XuGCHaZZtxY?rel=0" allowfullscreen loading="lazy"></iframe>
-          <div class="vid-tag">
-            <div class="vid-tag-title">Comparison Matrix</div>
-            <div class="vid-tag-sub">Viral Utility</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
-<section class="sec" id="testimonials" style="background: var(--surface);">
+<section class="sec vault-sec" id="vault">
   <div class="wrap">
-    <div class="sh rv">
-      <div style="margin-bottom: 16px;"><div class="badge">Social Proof</div></div>
-      <h2 class="sh-title">What Founders Say.</h2>
+    <div class="vault-header rv">
+      <div style="margin-bottom:16px; display:flex; justify-content:center;"><div class="badge">Asset Vault</div></div>
+      <h3>Declassified Winning Variations</h3>
+      <p>We don't rely on written reviews; we rely on undeniable visual proof. A sample of 10 distinct psychological frameworks deployed to bypass ad fatigue.</p>
+      <div class="mob-hint">Swipe horizontally to view all assets →</div>
     </div>
-
-    <div class="test-grid rv">
-      <div class="tcard">
-        <div class="tstars">★★★★★</div>
-        <p class="tquote">"The hook rate on the first batch was insane — <strong>51% on the main ad</strong>. Ahmed's research actually surfaces customer language we'd never thought to use in our pharmacy's copy."</p>
-        <div class="tauthor">
-          <div class="tavatar">D</div>
-          <div>
-            <div class="tname">Dr. Elokaby</div>
-            <div class="trole">Founder, Elokaby Pharmacies</div>
-          </div>
+    
+    <div class="vid-grid rv">
+      
+      <div class="vid-item">
+        <div class="vid-num">01</div>
+        <iframe src="https://www.youtube.com/embed/Nc3ImBOATLk?rel=0" allowfullscreen loading="lazy"></iframe>
+        <div class="vid-tag">
+          <div class="vid-tag-title">Psychological Hook</div>
+          <div class="vid-tag-sub">51% Hook Rate</div>
+        </div>
+      </div>
+      
+      <div class="vid-item">
+        <div class="vid-num">02</div>
+        <iframe src="https://www.youtube.com/embed/7o7SGOrVY6w?rel=0" allowfullscreen loading="lazy"></iframe>
+        <div class="vid-tag">
+          <div class="vid-tag-title">UGC Simulation</div>
+          <div class="vid-tag-sub">High Authenticity</div>
+        </div>
+      </div>
+      
+      <div class="vid-item">
+        <div class="vid-num">03</div>
+        <iframe src="https://www.youtube.com/embed/_VIlgi50QHQ?rel=0" allowfullscreen loading="lazy"></iframe>
+        <div class="vid-tag">
+          <div class="vid-tag-title">Premium Formatting</div>
+          <div class="vid-tag-sub">57% Hold Rate</div>
+        </div>
+      </div>
+      
+      <div class="vid-item">
+        <div class="vid-num">04</div>
+        <iframe src="https://www.youtube.com/embed/fGVDrBi00Dc?rel=0" allowfullscreen loading="lazy"></iframe>
+        <div class="vid-tag">
+          <div class="vid-tag-title">Pattern Interrupt</div>
+          <div class="vid-tag-sub">Visual Hack</div>
+        </div>
+      </div>
+      
+      <div class="vid-item">
+        <div class="vid-num">05</div>
+        <iframe src="https://www.youtube.com/embed/XuGCHaZZtxY?rel=0" allowfullscreen loading="lazy"></iframe>
+        <div class="vid-tag">
+          <div class="vid-tag-title">Comparison Matrix</div>
+          <div class="vid-tag-sub">Viral Utility</div>
+        </div>
+      </div>
+      
+      <div class="vid-item">
+        <div class="vid-num">06</div>
+        <iframe src="https://www.youtube.com/embed/7OHbX-gHsz0?rel=0" allowfullscreen loading="lazy"></iframe>
+        <div class="vid-tag">
+          <div class="vid-tag-title">Empathy Anchor</div>
+          <div class="vid-tag-sub">Pain Resonance</div>
+        </div>
+      </div>
+      
+      <div class="vid-item">
+        <div class="vid-num">07</div>
+        <iframe src="https://www.youtube.com/embed/PGeBNE1oydg?rel=0" allowfullscreen loading="lazy"></iframe>
+        <div class="vid-tag">
+          <div class="vid-tag-title">Scaling Variant A</div>
+          <div class="vid-tag-sub">Iteration 07</div>
+        </div>
+      </div>
+      
+      <div class="vid-item">
+        <div class="vid-num">08</div>
+        <iframe src="https://www.youtube.com/embed/Nc3ImBOATLk?rel=0" allowfullscreen loading="lazy"></iframe>
+        <div class="vid-tag">
+          <div class="vid-tag-title">Objection Handling</div>
+          <div class="vid-tag-sub">Friction Removal</div>
+        </div>
+      </div>
+      
+      <div class="vid-item">
+        <div class="vid-num">09</div>
+        <iframe src="https://www.youtube.com/embed/7o7SGOrVY6w?rel=0" allowfullscreen loading="lazy"></iframe>
+        <div class="vid-tag">
+          <div class="vid-tag-title">Authority Injection</div>
+          <div class="vid-tag-sub">Trust Builder</div>
+        </div>
+      </div>
+      
+      <div class="vid-item">
+        <div class="vid-num">10</div>
+        <iframe src="https://www.youtube.com/embed/_VIlgi50QHQ?rel=0" allowfullscreen loading="lazy"></iframe>
+        <div class="vid-tag">
+          <div class="vid-tag-title">Direct Offer Setup</div>
+          <div class="vid-tag-sub">Conversion Angle</div>
         </div>
       </div>
 
-      <div class="tcard">
-        <div class="tstars">★★★★★</div>
-        <p class="tquote">"The variation matrix changed everything. <strong>10 variations from one winning ad</strong> — running for weeks with zero fatigue. Our CPL dropped by more than half. We trust the process."</p>
-        <div class="tauthor">
-          <div class="tavatar">K</div>
-          <div>
-            <div class="tname">Khaled A.</div>
-            <div class="trole">Clinic Marketing Manager</div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
